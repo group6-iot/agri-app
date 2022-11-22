@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_nav"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.duntran.agriapp.ui.main.HomeFragment"
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_deviceSettingFragment"
+            app:destination="@id/deviceSettingFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_enviDataFragment"
+            app:destination="@id/enviDataFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.duntran.agriapp.ui.login.LoginFragment"
+        android:label="LoginFragment" >
+        <action
+            android:id="@+id/action_loginFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/deviceSettingFragment"
+        android:name="com.duntran.agriapp.ui.devicesetting.DeviceSettingFragment"
+        android:label="DeviceSettingFragment" >
+        <action
+            android:id="@+id/action_deviceSettingFragment_to_setupDeviceFragment"
+            app:destination="@id/setupDeviceFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/setupDeviceFragment"
+        android:name="com.duntran.agriapp.ui.setupdevice.SetupDeviceFragment"
+        android:label="SetupDeviceFragment" >
+        <argument
+            android:name="device"
+            app:argType="com.duntran.agriapp.data.model.DeviceResponse" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/enviDataFragment"
+        android:name="com.duntran.agriapp.ui.envidetail.EnviDataFragment"
+        android:label="EnviDataFragment" />
+</navigation>

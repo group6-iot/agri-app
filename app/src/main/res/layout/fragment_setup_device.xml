@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.duntran.agriapp.ui.setupdevice.SetupDeviceViewModel" />
+
+        <import type="android.view.View" />
+        <import type="com.duntran.agriapp.data.model.DeviceMode" />
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="@dimen/dp_5"
+            app:title="Device Setting"
+            android:background="@color/green"
+            style="@style/Theme.ToolbarNormal" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:overScrollMode="never">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:background="@color/white"
+                tools:context=".ui.splash.PolicyFragment">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/white"
+                        android:orientation="vertical">
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/ivDevice"
+                            android:layout_width="@dimen/dp_80"
+                            android:layout_height="@dimen/dp_80"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginVertical="@dimen/dp_10"
+                            android:layout_marginStart="@dimen/dp_10"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/default_image" />
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/tv1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/dp_30"
+                                android:layout_marginTop="@dimen/dp_20"
+                                android:fontFamily="@font/roboto_regular"
+                                android:text="Status: "
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/sp_15"
+                                android:textStyle="bold"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/tvStatus"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/dp_20"
+                                android:fontFamily="@font/roboto_regular"
+                                android:text="On"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/sp_15"
+                                app:layout_constraintStart_toEndOf="@+id/tv1"
+                                app:layout_constraintTop_toTopOf="@+id/tv1" />
+
+                            <TextView
+                                android:id="@+id/tv2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dp_10"
+                                android:fontFamily="@font/roboto_regular"
+                                android:text="Create at: "
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/sp_15"
+                                android:textStyle="bold"
+                                app:layout_constraintStart_toStartOf="@+id/tv1"
+                                app:layout_constraintTop_toBottomOf="@id/tv1" />
+
+                            <TextView
+                                android:id="@+id/tvCreatedAt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/dp_20"
+                                android:fontFamily="@font/roboto_regular"
+                                android:text="On"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/sp_15"
+                                app:layout_constraintStart_toEndOf="@+id/tv2"
+                                app:layout_constraintTop_toTopOf="@+id/tv2" />
+
+                            <TextView
+                                android:id="@+id/tv3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dp_10"
+                                android:fontFamily="@font/roboto_regular"
+                                android:text="Update at: "
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/sp_15"
+                                android:textStyle="bold"
+                                app:layout_constraintStart_toStartOf="@+id/tv2"
+                                app:layout_constraintTop_toBottomOf="@+id/tv2" />
+
+                            <TextView
+                                android:id="@+id/tvUpdatedAt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/dp_20"
+                                android:fontFamily="@font/roboto_regular"
+                                android:text="On"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/sp_15"
+                                app:layout_constraintStart_toEndOf="@+id/tv3"
+                                app:layout_constraintTop_toTopOf="@+id/tv3" />
+
+                            <TextView
+                                android:id="@+id/tv4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dp_10"
+                                android:fontFamily="@font/roboto_regular"
+                                android:text="Auto mode: "
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/sp_15"
+                                android:textStyle="bold"
+                                app:layout_constraintStart_toStartOf="@+id/tv3"
+                                app:layout_constraintTop_toBottomOf="@+id/tv3" />
+
+                            <RadioGroup
+                                android:id="@+id/radioGroup"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                app:layout_constraintRight_toRightOf="parent"
+                                app:layout_constraintStart_toEndOf="@+id/tv4"
+                                app:layout_constraintTop_toTopOf="@+id/tv4" >
+                                <RadioButton
+                                    android:id="@+id/rbAuto"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Auto"/>
+                                <RadioButton
+                                    android:id="@+id/rbManual"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Manual"/>
+                                <RadioButton
+                                    android:id="@+id/rbSchedule"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Schedule"/>
+                            </RadioGroup>
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:visibility="@{viewModel.deviceMode == DeviceMode.Auto? View.GONE:View.VISIBLE}">
+
+                            <LinearLayout
+                                android:id="@+id/linearLayout"
+                                android:visibility="@{viewModel.deviceMode == DeviceMode.Manual? View.VISIBLE:View.GONE}"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/tvButtonOnOff"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/dp_30"
+                                    android:text="Remote status"
+                                    android:textColor="@color/black" />
+
+                                <androidx.appcompat.widget.SwitchCompat
+                                    android:id="@+id/switchOnOff"
+                                    style="@style/CustomSwitchSetting"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/dp_20"
+                                    android:onClick="@{() -> viewModel.changeDeviceOnOff()}" />
+                            </LinearLayout>
+
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:visibility="@{viewModel.deviceMode == DeviceMode.Schedule? View.VISIBLE:View.GONE}"
+                                android:orientation="vertical"
+                                app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/dp_30"
+                                    android:layout_marginVertical="@dimen/dp_20"
+                                    android:fontFamily="@font/roboto_regular"
+                                    android:text="Schedule"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/sp_15"
+                                    android:textStyle="bold" />
+                                <TimePicker
+                                    android:id="@+id/timePicker"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_gravity="center_horizontal"
+                                    android:timePickerMode="spinner" />
+
+                                <androidx.appcompat.widget.LinearLayoutCompat
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="@dimen/dp_30"
+                                        android:layout_marginVertical="@dimen/dp_20"
+                                        android:layout_gravity="center_vertical"
+                                        android:fontFamily="@font/roboto_regular"
+                                        android:text="Duration (second)"
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/sp_15"
+                                        android:textStyle="bold" />
+                                    <EditText
+                                        android:id="@+id/edtDuration"
+                                        android:layout_width="match_parent"
+                                        android:inputType="number"
+                                        android:text="1"
+                                        android:layout_height="wrap_content"/>
+
+                                </androidx.appcompat.widget.LinearLayoutCompat>
+                                <Button
+                                    android:id="@+id/btnSchedule"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="right"
+                                    android:layout_margin="@dimen/dp_10"
+                                    android:backgroundTint="@color/green"
+                                    android:text="Setup"
+                                    android:textAllCaps="false"
+                                    android:textColor="@color/white"
+                                    android:textSize="12sp" />
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                </FrameLayout>
+
+
+
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+</layout>
